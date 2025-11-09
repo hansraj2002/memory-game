@@ -85,3 +85,23 @@ function checkMatch() {
 
 restartBtn.addEventListener('click', createBoard);
 createBoard();
+const exitBtn = document.getElementById('exitBtn');
+
+exitBtn.addEventListener('click', () => {
+  if (document.exitFullscreen) {
+    document.exitFullscreen();
+  } else if (document.mozCancelFullScreen) { 
+    document.mozCancelFullScreen();
+  } else if (document.webkitExitFullscreen) { 
+    document.webkitExitFullscreen();
+  } else if (document.msExitFullscreen) { 
+    document.msExitFullscreen();
+  }
+});
+
+// Optional: ESC key also exits fullscreen
+document.addEventListener('keydown', function(e) {
+  if(e.key === "Escape") {
+    if (document.exitFullscreen) document.exitFullscreen();
+  }
+});
