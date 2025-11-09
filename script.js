@@ -83,3 +83,5 @@ function checkMatch() {
   }
 }
 
+restartBtn.addEventListener('click', createBoard);
+createBoard();
